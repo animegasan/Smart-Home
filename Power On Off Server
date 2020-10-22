@@ -1,0 +1,36 @@
+#include <IRremote.h>
+int IRpin = 2; 
+int R1 = 3;
+
+IRrecv irrecv(IRpin);
+decode_results results;
+
+void setup()
+{
+  Serial.begin(9600);
+  irrecv.enableIRIn();
+  pinMode(R1, OUTPUT);
+  digitalWrite(R1,HIGH);
+}
+
+void loop() 
+{
+   
+  if (irrecv.decode(&results)) 
+    {
+      Eksekusi();
+      Serial.println(results.value);
+      irrecv.resume();
+    }
+}
+
+void Eksekusi(){
+  switch(results.value){
+    case 0xFFA25D: //Ubah dan Sesuaikan 3772784863 
+      digitalWrite(R1,!digitalRead(R1));
+      break;
+      default:
+      break;
+  }
+  delay(200);
+}
