@@ -2,8 +2,11 @@
 #include <IRremote.h>
 
 // Set pin dalam Arduino
-int IRpin = 2; // Pin Digital No. 2
-int R1 = 3; // Pin Digital No. 3
+int IRpin = 2; // Pin Digital No. 2 untuk Signal IR Receiver
+int R1 = 3; // Pin Digital No. 3 untuk IN Relay
+
+// Set code source IR Receiver
+int Code1 = 0xFFA25D; // Kode tombol 1
 
 IRrecv irrecv(IRpin);
 decode_results results;
@@ -29,7 +32,7 @@ void loop()
 
 void Eksekusi(){
   switch(results.value){
-    case 0xFFA25D: //Ubah dan Sesuaikan dengan input code dari Infrared
+    case (Code1):
       digitalWrite(R1,!digitalRead(R1));
       break;
       default:
