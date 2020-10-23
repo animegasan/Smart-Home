@@ -1,6 +1,9 @@
+// Menambahkan Library IR Remote
 #include <IRremote.h>
-int IRpin = 2; 
-int R1 = 3;
+
+// Set pin dalam Arduino
+int IRpin = 2; // Pin Digital No. 2
+int R1 = 3; // Pin Digital No. 3
 
 IRrecv irrecv(IRpin);
 decode_results results;
@@ -26,7 +29,7 @@ void loop()
 
 void Eksekusi(){
   switch(results.value){
-    case 0xFFA25D: //Ubah dan Sesuaikan 3772784863 
+    case 0xFFA25D: //Ubah dan Sesuaikan dengan input code dari Infrared
       digitalWrite(R1,!digitalRead(R1));
       break;
       default:
