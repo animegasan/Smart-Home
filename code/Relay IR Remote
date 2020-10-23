@@ -1,4 +1,4 @@
-// Menambahkan Library IR Remote
+// Menambahkan Library IR Remote by Ken Shirriff
 #include <IRremote.h>
 
 // Set pin dalam Arduino
