@@ -1,7 +1,7 @@
 /*
 Project 01  : Membuat Sensor Infrared di Server
 Tujuan      : Agar Server dapat di ON OFF secara Online via Bardi Smart IR Receiver
-Fungsi Code : PrintOut source code dari IR Remote
+Fungsi Code : PrintOut source code dari IR Remote dengan Boud Rate ke 9600
 */
 
 // Menambahkan Library IR Remote by Ken Shirriff
@@ -10,7 +10,7 @@ Fungsi Code : PrintOut source code dari IR Remote
 // Set pin Digital dalam Arduino ke IR Remote
 int IR_PIN = 2;
 
-// Set code source IR Receiver Boud Rate ke 9600
+// Set source code IR Receiver Boud Rate ke 9600
 int Code0 = 0xFF4AB5; // Tombol 0
 int Code1 = 0xFF6897; // Tombol 1
 int Code2 = 0xFF9867; // Tombol 2
