@@ -1,6 +1,6 @@
 /*
 Project 01  : Membuat Sensor Infrared di Server
-Tujuan      : Agar Server dapat di ON OFF secara Online via Bardi Smart IR Receiver
+Tujuan      : Agar server dapat di ON/OFF secara online via Bardi Smart Universal IR Remote
 Fungsi Code : Test IR Remote ke Arduino dengan Boud Rate ke 9600
 */
 
@@ -22,6 +22,6 @@ void setup()
 void loop() {
   if (irDetect.decode(&irIn)) {
     Serial.println(irIn.value, HEX);
-    irDetect.resume(); // Melanjutkan Code
+    irDetect.resume(); // Melanjutkan source code
   }
 }
